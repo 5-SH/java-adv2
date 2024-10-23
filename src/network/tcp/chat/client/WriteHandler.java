@@ -1,4 +1,4 @@
-package network.tcp.chat;
+package network.tcp.chat.client;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -29,6 +29,8 @@ public class WriteHandler implements Runnable {
 
             while (true) {
                 String toSend = scanner.nextLine();
+
+                if (toSend.isEmpty()) continue;
 
                 if (toSend.equals("/exit")) {
                     output.writeUTF(toSend);
