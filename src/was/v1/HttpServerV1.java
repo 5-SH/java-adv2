@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import static io.util.MyLogger.log;
+import static util.MyLogger.log;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class HttpServerV1 {

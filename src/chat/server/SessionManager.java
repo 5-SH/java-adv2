@@ -1,4 +1,4 @@
-package network.tcp.chat.server;
+package chat.server;
 
 import java.io.IOException;
 import java.util.ArrayList;

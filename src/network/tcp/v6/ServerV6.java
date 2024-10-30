@@ -1,12 +1,10 @@
 package network.tcp.v6;
 
-import network.tcp.v4.SessionV4;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import static io.util.MyLogger.log;
+import static util.MyLogger.log;
 
 public class ServerV6 {
 

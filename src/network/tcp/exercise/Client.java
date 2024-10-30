@@ -7,7 +7,7 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
-import static io.util.MyLogger.log;
+import static util.MyLogger.log;
 import static network.tcp.SocketCloseUtil.closeAll;
 
 public class Client {

@@ -1,11 +1,11 @@
-package network.tcp.chat.client;
+package chat.client;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-import static io.util.MyLogger.log;
+import static util.MyLogger.log;
 
 public class WriteHandler implements Runnable {
 

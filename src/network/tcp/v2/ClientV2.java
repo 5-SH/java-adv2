@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
 
-import static io.util.MyLogger.log;
+import static util.MyLogger.log;
 
 public class ClientV2 {
 

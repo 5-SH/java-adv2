@@ -1,11 +1,11 @@
-package network.tcp.chat.client;
+package chat.client;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-import static io.util.MyLogger.log;
+import static util.MyLogger.log;
 import static network.tcp.SocketCloseUtil.closeAll;
 
 public class Client {

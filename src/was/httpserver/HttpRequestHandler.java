@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import static io.util.MyLogger.log;
+import static util.MyLogger.log;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class HttpRequestHandler implements Runnable {

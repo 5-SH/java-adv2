@@ -1,9 +1,9 @@
-package network.tcp.chat.client;
+package chat.client;
 
 import java.io.DataInputStream;
 import java.io.IOException;
 
-import static io.util.MyLogger.log;
+import static util.MyLogger.log;
 
 public class ReadHandler implements Runnable {
 
