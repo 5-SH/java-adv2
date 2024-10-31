@@ -1,23 +1,22 @@
-package was.v5;
+package was.v7;
 
 import was.httpserver.HttpServer;
 import was.httpserver.servlet.ServletManager;
-import was.v5.servlet.*;
+import was.httpserver.servlet.annotation.AnnotationServletV1;
+import was.v5.servlet.DiscardServlet;
 
 import java.io.IOException;
+import java.util.List;
 
-public class ServerMainV5 {
+public class ServerMainV7 {
 
     private static final int PORT = 12345;
 
     public static void main(String[] args) throws IOException {
+        List<Object> controllers = List.of(new SiteControllerV7(), new SearchControllerV7());
         ServletManager servletManager = new ServletManager();
-        servletManager.add("/", new HomeServlet());
-        servletManager.add("/site1", new Site1Servlet());
-        servletManager.add("/site2", new Site2Servlet());
-        servletManager.add("/search", new SearchServlet());
+        servletManager.setDefaultServlet(new AnnotationServletV1(controllers));
         servletManager.add("/favicon.ico", new DiscardServlet());
-
         HttpServer server = new HttpServer(PORT, servletManager);
         server.start();
     }

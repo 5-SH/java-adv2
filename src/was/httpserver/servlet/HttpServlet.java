@@ -1,4 +1,7 @@
-package was.httpserver;
+package was.httpserver.servlet;
+
+import was.httpserver.HttpRequest;
+import was.httpserver.HttpResponse;
 
 import java.io.IOException;
 

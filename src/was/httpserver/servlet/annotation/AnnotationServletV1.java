@@ -1,15 +1,19 @@
-package was.httpserver;
+package was.httpserver.servlet.annotation;
+
+import was.httpserver.HttpRequest;
+import was.httpserver.HttpResponse;
+import was.httpserver.PageNotFoundException;
+import was.httpserver.servlet.HttpServlet;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
-public class ReflectionServlet implements HttpServlet {
+public class AnnotationServletV1 implements HttpServlet {
+    private final List<Object> controllers;
 
-    private List<Object> controllers;
-
-    public ReflectionServlet(List<Object> controllers) {
+    public AnnotationServletV1(List<Object> controllers) {
         this.controllers = controllers;
     }
 
@@ -18,13 +22,15 @@ public class ReflectionServlet implements HttpServlet {
         String path = request.getPath();
 
         for (Object controller : controllers) {
-            Class<?> aClass = controller.getClass();
-            Method[] methods = aClass.getMethods();
+            Method[] methods = controller.getClass().getDeclaredMethods();
             for (Method method : methods) {
-                String methodName = method.getName();
-                if (path.equals("/" + methodName)) {
-                    invoke(controller, method, request, response);
-                    return;
+                if (method.isAnnotationPresent(Mapping.class)) {
+                    Mapping annotation = method.getAnnotation(Mapping.class);
+                    String value = annotation.value();
+                    if (value.equals(path)) {
+                        invoke(controller, method, request, response);
+                        return;
+                    }
                 }
             }
         }

@@ -1,5 +1,8 @@
-package was.httpserver;
+package was.httpserver.servlet;
 
+import was.httpserver.HttpRequest;
+import was.httpserver.HttpResponse;
+import was.httpserver.PageNotFoundException;
 import was.v5.servlet.InternalErrorServlet;
 import was.v5.servlet.NotFoundErrorServlet;
 
