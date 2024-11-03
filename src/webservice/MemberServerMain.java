@@ -2,7 +2,6 @@ package webservice;
 
 import io.member.FileMemberRepository;
 import io.member.MemberRepository;
-import io.member.MemoryMemberRepository;
 import was.httpserver.HttpServer;
 import was.httpserver.servlet.HttpServlet;
 import was.httpserver.servlet.ServletManager;
