@@ -24,8 +24,6 @@ public class Server {
         addShutdownHook(serverSocket);
 
         running(serverSocket);
-
-
     }
 
     private void addShutdownHook(ServerSocket serverSocket) {

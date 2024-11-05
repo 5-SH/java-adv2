@@ -1,10 +1,8 @@
 package io.buffered;
 
-import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import static io.buffered.BufferedConst.BUFFER_SIZE;
 import static io.buffered.BufferedConst.FILE_NAME;
 
 public class ReadFileV4 {
